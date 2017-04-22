@@ -1,0 +1,187 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/hail2u/node-csswring"
+
+    >csswring (v5.1.1)</a>
+</h1>
+<h4>Minify CSS using PostCSS</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.csswring">module csswring</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.csswring.csswring">
+            function <span class="apidocSignatureSpan"></span>csswring
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.csswring.process">
+            function <span class="apidocSignatureSpan">csswring.</span>process
+            <span class="apidocSignatureSpan">(root, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.csswring.wring">
+            function <span class="apidocSignatureSpan">csswring.</span>wring
+            <span class="apidocSignatureSpan">(css, opts)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.csswring" id="apidoc.module.csswring">module csswring</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.csswring.csswring" id="apidoc.element.csswring.csswring">
+        function <span class="apidocSignatureSpan"></span>csswring
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function creator() {
+  var transformer = initializer.apply(undefined, arguments);
+  transformer.postcssPlugin = name;
+  transformer.postcssVersion = new _processor2.default().version;
+  return transformer;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.csswring.process" id="apidoc.element.csswring.process">
+        function <span class="apidocSignatureSpan">csswring.</span>process
+        <span class="apidocSignatureSpan">(root, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">process = function (root, opts) {
+  return postcss([creator(opts)]).process(root, opts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    var fs = require(&#x22;fs&#x22;);
+    var postcss = require(&#x22;postcss&#x22;);
+
+    var css = fs.readFileSync(&#x22;test.css&#x22;, &#x22;utf8&#x22;);
+    postcss([
+      require(&#x22;autoprefixer&#x22;)(),
+      require(&#x22;csswring&#x22;)()
+    ]).<span class="apidocCodeKeywordSpan">process</span>(css).then(function (result) {
+      fs.writeFileSync(&#x22;test.min.css&#x22;, result.css);
+    });
+
+
+### As standard Node.js package
+
+To minify `test.css` to `test.min.css`:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.csswring.wring" id="apidoc.element.csswring.wring">
+        function <span class="apidocSignatureSpan">csswring.</span>wring
+        <span class="apidocSignatureSpan">(css, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">wring = function (css, opts) {
+  return postcss([
+    this(opts)
+  ]).process(css, opts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+&#x22;use strict&#x22;;
+
+var fs = require(&#x22;fs&#x22;);
+var csswring = require(&#x22;csswring&#x22;);
+
+var css = fs.readFileSync(&#x22;test.css&#x22;, &#x22;utf8&#x22;);
+fs.writeFileSync(&#x22;test.min.css&#x22;, csswring.<span class="apidocCodeKeywordSpan">wring</span>(css).css);
+
+
+## As CLI Program
+
+This package also installs a command line interface.
+
+$ node ./node_modules/.bin/csswring --help
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
