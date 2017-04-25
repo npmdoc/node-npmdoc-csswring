@@ -125,21 +125,15 @@
   return postcss([creator(opts)]).process(root, opts);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-    var fs = require(&#x22;fs&#x22;);
-    var postcss = require(&#x22;postcss&#x22;);
+    return css;
+  };
+});
 
-    var css = fs.readFileSync(&#x22;test.css&#x22;, &#x22;utf8&#x22;);
-    postcss([
-      require(&#x22;autoprefixer&#x22;)(),
-      require(&#x22;csswring&#x22;)()
-    ]).<span class="apidocCodeKeywordSpan">process</span>(css).then(function (result) {
-      fs.writeFileSync(&#x22;test.min.css&#x22;, result.css);
-    });
-
-
-### As standard Node.js package
-
-To minify `test.css` to `test.min.css`:
+module.exports.wring = function (css, opts) {
+  return postcss([
+    this(opts)
+  ]).<span class="apidocCodeKeywordSpan">process</span>(css, opts);
+};
 ...</pre></li>
     </ul>
 
