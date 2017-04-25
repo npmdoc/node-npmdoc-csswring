@@ -1,6 +1,6 @@
 # npmdoc-csswring
 
-#### api documentation for  [csswring (v5.1.1)](https://github.com/hail2u/node-csswring)  [![npm package](https://img.shields.io/npm/v/npmdoc-csswring.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-csswring) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-csswring.svg)](https://travis-ci.org/npmdoc/node-npmdoc-csswring)
+#### basic api documentation for  [csswring (v5.1.1)](https://github.com/hail2u/node-csswring)  [![npm package](https://img.shields.io/npm/v/npmdoc-csswring.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-csswring) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-csswring.svg)](https://travis-ci.org/npmdoc/node-npmdoc-csswring)
 
 #### Minify CSS using PostCSS
 
